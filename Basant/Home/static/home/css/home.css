@@ -1,0 +1,47 @@
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: rgb(10, 10, 10);
+    z-index: 1000;
+}
+
+.HomeImage {
+    width: 200px;
+}
+
+.BG1 {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+    overflow: hidden;
+}
+.BG1 img.BG-image, .BG-video {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+
+.BG-video {
+    z-index: 1; /* Ensures the video is in front of the image */
+}
+
+.BG1 img.BG-image {
+    z-index: 0;
+    opacity: 0.7; /* Adjust opacity for blending with the video */
+}
+
+/* Optional: Make the video responsive */
+@media (max-width: 768px) {
+    .BG-video {
+        object-fit: cover;
+        height: auto;
+    }
+}
