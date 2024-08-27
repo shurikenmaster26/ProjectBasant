@@ -24,25 +24,53 @@
     margin-left: 0px;
     padding: 0;
     border-radius: 20px;
+    border: 2px;
+}
+
+.nav-links li {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the link */
 }
 
 .nav-links li a {
-    color: rgb(177, 0, 0);
+    color: rgb(255, 154, 154);
     text-decoration: none;
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 10px 20px;
-    transition: background-color 0.3s;
-    border-radius: 20px;
-    transition: 0.2s;
+    position: relative; /* Ensure the pseudo-element is positioned relative to the link */
+    overflow: hidden; /* Hide the overflowing pseudo-element */
+    z-index: 1; /* Ensure the link text stays on top */
+    border: 2px solid transparent; /* Initial border with transparent color */
+    border-radius: 30px; /* Optional: Add rounded corners */
+    transition: border-color 0.5s ease; /* Smooth transition for border color */
+    border-color: rgb(85, 31, 0);
+    border-width: 2px;
+    background-color: #120000;
 }
 
-.nav-links li a:hover{
+.nav-links li a::before {
     content: '';
-    color:aliceblue;
-    background: rgb(255, 0, 0,0.2);
-    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(199, 0, 0); /* Color of the fill */
+    transition: width 0.25s ease; /* Smooth transition for the fill effect */
+    z-index: -1; /* Ensure the fill is behind the text */
+    border-radius: 30px;
+    box-shadow: 0 0 25px red;
 }
+
+.nav-links li a:hover::before {
+    width: 100%; /* Expand the fill to 100% width on hover */
+    border-radius: 30px;
+}
+
+.nav-links li a:hover {
+    color: aliceblue; /* Optional: Change text color on hover */
+}
+
 
 /* Logo Styling */
 .HomeImage {
@@ -126,7 +154,18 @@
 
 
 
-/* Style for Register Button */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 100px rgb(19, 43, 255); /* Initial glow color */
+    }
+    50% {
+        box-shadow: 0 0 100px greenyellow; /* Midpoint glow color */
+    }
+    100% {
+        box-shadow: 0 0 100px rgb(135, 18, 0); /* Return to initial glow color */
+    }
+}
+
 .register-button {
     position: absolute;
     bottom: 20px; /* Position at the bottom of the video */
@@ -135,19 +174,35 @@
     z-index: 2; /* Ensure the button is above the video */
     width: 200px; /* Adjust width to fit the image */
     height: 60px; /* Adjust height to fit the image */
+    
     background-image: url("../images/register.png");/* Add image as background */
     background-size: cover; /* Ensure the image covers the entire button */
     background-position: center; /* Center the image */
-    border: none; /* Remove any default border */
+    border-radius: 5px; /* Rounded corners */
     text-indent: -9999px; /* Hide the text, if any */
     cursor: pointer; /* Change cursor to pointer on hover */
+    background-color: #8b1900;
+    box-shadow: 0 0 100px rgb(135, 18, 0);
+    transition: background-color 0.5s; /* Smooth background color transition */
+    animation: glow 1s infinite alternate; /* Apply glow animation */
 }
-
 
 .register-button:hover {
-    background-color: #e04e2c; /* Darker shade on hover */
+    background-color: #1c0500; /* Darker shade on hover */
+    border-radius:12px;
+    transition: 0.5s;
 }
 
+.span{
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
 
 
 

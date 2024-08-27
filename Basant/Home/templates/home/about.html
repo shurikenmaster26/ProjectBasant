@@ -9,25 +9,17 @@
     <link rel="stylesheet" href="{% static 'home/css/about.css' %}">
 </head>
     <body>
-        <header class="sticky-header">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a class="active" href="index.html">Events</a></li>
+                <li><a href="pages/about.html">About</a></li> <!-- Added text here -->
                 <img src="{% static 'home/images/Untitled.png' %}" alt="Example Image" class="HomeImage"/>
-
-            
-        </header>
+                <li><a href="index.html">Our Team</a></li>
+                <li><a href="pages/register.html">Register</a></li> <!-- Corrected href -->
+            </ul>
+        </nav>
     
     <div class="BG1">
-            
-        <!-- Video Background -->
-        <video class="BG-video" id="bgVideo" autoplay muted loop>
-            <source src="{% static 'home/videos/BGvid.mp4' %}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-        <button id="muteButton" class="mute-button" onclick="toggleMute()">
-            <span id="buttonText">Unmute</span>
-        </button>
-
-        <a href="{% url 'WebHome' %}" class="register-button"></a>
 
     </div>
 
