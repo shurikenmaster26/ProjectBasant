@@ -1,47 +1,159 @@
-.header {
-    position: sticky;
+.navbar {
+    position: fixed;
     top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    background-color: rgb(10, 10, 10);
-    z-index: 1000;
-}
-
-.HomeImage {
-    width: 200px;
-}
-
-.BG1 {
-    position: relative;
+    left: 0;
     width: 100%;
-    height: 100vh; /* Full height of the viewport */
-    overflow: hidden;
+    height: 110px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 30%, rgba(113, 0, 0, 1) 50%, rgba(113, 0, 0, 1) 50%, rgba(0, 0, 0, 1) 70%);
+    color: rgb(19, 19, 19);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
 }
-.BG1 img.BG-image, .BG-video {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-around; /* Adjusted spacing */
+    align-items: center;
+    margin: 0;
+    margin-bottom: 0px;
+    margin-top: -9px;
+    margin-left: 0px;
+    padding: 0;
+    border-radius: 20px;
+}
+
+.nav-links li a {
+    color: rgb(177, 0, 0);
+    text-decoration: none;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+.nav-links li a:hover{
+    content: '';
+    color:aliceblue;
+    background: rgb(255, 0, 0,0.2);
+    border-radius: 20px;
+}
+
+/* Logo Styling */
+.HomeImage {
+    margin-bottom: 2px;
+    max-height: 100%;
+    max-width: 14%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+
+.BG1 {  
+    position: relative;
+    height: calc(100vh - 120px); /* Adjust this if needed */
+    margin-top: 110px; /* Ensure this matches the header height */
+    overflow: hidden; /* Hide any overflow */
+    background-image: none; /* Remove background image here */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+.BG1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/BG1.jpg"); /* Path to your background image */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    filter: blur(3px); /* Apply the blur effect */
+    z-index: -1; /* Ensure this layer is behind the video and other content */
+    transform: scale(1.1); /* Scale slightly to avoid edge artifacts */
 }
 
 
 .BG-video {
-    z-index: 1; /* Ensures the video is in front of the image */
+    position: relative;
+    width: 102%; /* Adjust width as needed */
+    height: 98%; /* Set the height to 80% of the BG1 container height */
+    max-width: 1200px; /* Set a maximum width */
+    z-index: 1; /* Ensure the video stays in front of the blurred background */
+    border-radius: 10px;
+    /*margin-top: 20px; /* Add margin at the top */
+    margin-bottom: -1px; /* Add margin at the bottom */
+    
 }
 
-.BG1 img.BG-image {
-    z-index: 0;
-    opacity: 0.7; /* Adjust opacity for blending with the video */
+
+
+
+
+
+.mute-button {
+    position: absolute; /* Ensure the button is positioned relative to its closest positioned ancestor */
+    top: 10px; /* Adjust this value as needed to position the button from the top */
+    left: 10px; /* Adjust this value as needed to position the button from the left */
+    z-index: 2; /* Ensure the button appears above the video */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add some background color for better visibility */
+    color: white; /* Optional: Change text color to contrast with background */
+    border: none; /* Remove default button borders */
+    padding: 10px; /* Add some padding for better appearance */
+    cursor: pointer; /* Change cursor to pointer when hovering over the button */
+    border-radius: 5px; /* Optional: Add rounded corners */
 }
 
-/* Optional: Make the video responsive */
-@media (max-width: 768px) {
-    .BG-video {
-        object-fit: cover;
-        height: auto;
-    }
+/* Ensure the BG1 container is positioned relative to allow absolute positioning inside it */
+
+
+.mute-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
+
+/* Register Button Styling */
+/* Style for Register Button */
+
+
+
+
+
+/* Style for Register Button */
+.register-button {
+    position: absolute;
+    bottom: 20px; /* Position at the bottom of the video */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    z-index: 2; /* Ensure the button is above the video */
+    width: 200px; /* Adjust width to fit the image */
+    height: 60px; /* Adjust height to fit the image */
+    background-image: url("../images/register.png");/* Add image as background */
+    background-size: cover; /* Ensure the image covers the entire button */
+    background-position: center; /* Center the image */
+    border: none; /* Remove any default border */
+    text-indent: -9999px; /* Hide the text, if any */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+
+.register-button:hover {
+    background-color: #e04e2c; /* Darker shade on hover */
+}
+
+
+
+
+
+
+
+
+
+

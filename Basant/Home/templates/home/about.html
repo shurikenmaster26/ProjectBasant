@@ -8,11 +8,12 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'home/css/about.css' %}">
 </head>
-<body>
-    <header class="sticky-header">
-        <!-- Add your header content here -->
-        <img src="{% static 'home/images/BasantLOGO1.png' %}" alt="Example Image" class="HomeImage"/>
-    </header>
+    <body>
+        <header class="sticky-header">
+                <img src="{% static 'home/images/Untitled.png' %}" alt="Example Image" class="HomeImage"/>
+
+            
+        </header>
     
     <div class="BG1">
             
@@ -25,6 +26,8 @@
         <button id="muteButton" class="mute-button" onclick="toggleMute()">
             <span id="buttonText">Unmute</span>
         </button>
+
+        <a href="{% url 'WebHome' %}" class="register-button"></a>
 
     </div>
 
