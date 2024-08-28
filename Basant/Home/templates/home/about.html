@@ -7,21 +7,44 @@
     <title>Basant '24 - BKBIET Fest</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'home/css/about.css' %}">
+
+    <link rel="icon" type="image/png" href="{% static 'home/images/Blogo.png' %}">
 </head>
     <body>
         <nav class="navbar">
             <ul class="nav-links">
                 <li><a class="active" href="index.html">Events</a></li>
                 <li><a href="pages/about.html">About</a></li> <!-- Added text here -->
-                <img src="{% static 'home/images/Untitled.png' %}" alt="Example Image" class="HomeImage"/>
+                <a href="{% url 'WebHome' %}" class="nav-logo">
+                    <img src="{% static 'home/images/Untitled.png' %}" alt="Example Image" class="HomeImage"/>
+                </a>
+                </li>
                 <li><a href="index.html">Our Team</a></li>
                 <li><a href="pages/register.html">Register</a></li> <!-- Corrected href -->
             </ul>
         </nav>
     
-    <div class="BG1">
-
-    </div>
+        <div class="BG1">
+            <div class="content-wrapper">
+                <p class="fest-description">
+                    The college fest ‘Basant’ is celebrated in the month of March/April every year. The fest is structured to provide students with a platform to realize their creative talent in the fields of technology, sports, and cultural activities. It plays an important role in shaping the personality of the students. The name of the college fest resonates with spring, embodying the rejuvenation and vibrance of life. Spring evokes enthusiasm and creative expression of talent, a time relished by students.
+                </p>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank" class="social-link">
+                    <img src="{% static 'home/images/instagram.png' %}" alt="Instagram" class="social-logo">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-link">
+                    <img src="{% static 'home/images/linkedin.png' %}" alt="LinkedIn" class="social-logo">
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="social-link">
+                    <img src="{% static 'home/images/twitter.png' %}" alt="Twitter" class="social-logo">
+                </a>
+            </div>
+        </footer>
 
     <script src="{% static 'home/js/home.js' %}"></script>
 </body>
