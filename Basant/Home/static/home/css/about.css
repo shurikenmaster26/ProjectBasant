@@ -67,6 +67,7 @@
 
 .nav-links li a:hover {
     color: aliceblue;
+    font-weight:600;
 }
 
 .nav-logo {
@@ -81,9 +82,14 @@
     vertical-align: middle;
     margin-bottom: 2px;
     margin-top: -7px;
+    margin-right:65px;
+    margin-left:65px;
 
 }
 
+.nav-spacer {
+    flex: 1; /* Takes up remaining space, adjusting the distances */
+}
 
 /* Add more styling here if needed */
 
@@ -123,10 +129,23 @@
     padding: 50px 0;
 }
 
+.BG-video {
+    position: relative;
+    width: 102%; /* Adjust width as needed */
+    height: 98%; /* Set the height to 80% of the BG1 container height */
+    max-width: 1200px; /* Set a maximum width */
+    z-index: 1; /* Ensure the video stays in front of the blurred background */
+    border-radius: 10px;
+    /*margin-top: 20px; /* Add margin at the top */
+    margin-bottom: -1px; /* Add margin at the bottom */
+    
+}
+
+
 .content-wrapper {
     max-width: 800px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
 }
@@ -135,7 +154,8 @@
     color: #fff;
     font-size: 1.2rem;
     line-height: 1.8;
-    font-family:Georgia, 'Times New Roman', Times, serif
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:25px;
 }
 
 
@@ -223,17 +243,29 @@
 }
 
 
-
-/*footer*/
+/* Footer */
 .footer {
-    background-color: #202020;
+    background-color: #361a1a;
     padding: 20px 0;
     text-align: center;
 }
 
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px; /* Adjust based on your design */
+    margin: 0 auto;
+}
+
+.college-logo {
+    height: 70px; /* Adjust based on your design */
+    margin-right: 20px; /* Space between logo and social icons */
+}
+
 .social-icons {
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
@@ -250,6 +282,25 @@
 .social-logo:hover {
     transform: scale(1.1);
 }
+
+.contact-us {
+    text-align: left;
+}
+
+.contact-us p {
+    margin: 0;
+    color: #fff;
+}
+
+.contact-us a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-us a:hover {
+    text-decoration: underline;
+}
+
 
 
 

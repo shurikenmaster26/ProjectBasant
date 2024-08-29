@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Basant '24 - BKBIET Fest</title>
+    {% load static %}
+    
+    {% block extra_css %}
+    <!-- Additional CSS files for each template will be included here -->
+    {% endblock %}
+
+    <link rel="icon" type="image/png" href="{% static 'home/images/Blogo.png' %}">
+</head>
+    <body>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li class="nav-spacer"></li> <!-- Spacer -->
+                <li><a class="active" href="index.html">Events</a></li>
+                <li><a href="pages/about.html">About</a></li> <!-- Added text here -->
+                <a href="{% url 'WebHome' %}" class="nav-logo">
+                    <img src="{% static 'home/images/Untitled.png' %}" alt="Example Image" class="HomeImage"/>
+                </a>
+                </li>
+                <li><a href="index.html">Our Team</a></li>
+                <li><a href="pages/register.html">Register</a></li> <!-- Corrected href -->
+                <li class="nav-spacer"></li> <!-- Spacer -->
+            </ul>
+        </nav>
+    
+        <div class="BG1">
+            <div class="content-wrapper">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <img src="{% static 'home/images/images.png' %}" alt="BKBIET-logo" class="college-logo">
+
+                <div class="contact-us">
+                    <p>Contact Us:</p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Email: <a href="mailto:contact@college.edu">contact@college.edu</a></p>
+                </div>
+        
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank" class="social-link">
+                        <img src="{% static 'home/images/instagram.png' %}" alt="Instagram" class="social-logo">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" class="social-link">
+                        <img src="{% static 'home/images/linkedin.png' %}" alt="LinkedIn" class="social-logo">
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" class="social-link">
+                        <img src="{% static 'home/images/twitter.png' %}" alt="Twitter" class="social-logo">
+                    </a>
+                </div>
+        
+            </div>
+        </footer>
+        
+
+    <script src="{% static 'home/js/home.js' %}"></script>
+</body>
+</html>

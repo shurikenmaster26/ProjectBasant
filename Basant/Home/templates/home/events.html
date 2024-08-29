@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fest Events</title>
+    <link rel="stylesheet" href="{% static 'css/events.css' %}">
+</head>
+<body>
+    <div class="events-container">
+        {% for event in events %}
+        <div class="event-card">
+            <img src="{% static event.image %}" alt="{{ event.title }}" class="event-image">
+            <div class="event-content">
+                <h3>{{ event.title }}</h3>
+                <p>{{ event.intro }}</p>
+                <div class="event-buttons">
+                    <a href="{% url 'event_detail' event.id %}" class="btn details-btn">Details</a>
+                    <a href="{% url 'buy_tickets' event.id %}" class="btn tickets-btn">Buy Tickets</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

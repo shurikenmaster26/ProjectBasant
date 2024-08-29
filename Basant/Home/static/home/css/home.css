@@ -16,19 +16,17 @@
     list-style: none;
     display: flex;
     width: 100%;
-    justify-content: space-around; /* Adjusted spacing */
+    justify-content: space-between; /* Use space-between to evenly distribute links */
     align-items: center;
     margin: 0;
-    margin-bottom: 0px;
-    margin-top: -9px;
-    margin-left: 0px;
     padding: 0;
     border-radius: 20px;
-    border: 2px;
 }
 
 .nav-links li {
-    position: relative; /* Ensure the pseudo-element is positioned relative to the link */
+    position: relative;
+    flex: 1; /* Each link takes up equal space */
+    text-align: center; /* Center the text within each list item */
 }
 
 .nav-links li a {
@@ -37,12 +35,12 @@
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 10px 20px;
-    position: relative; /* Ensure the pseudo-element is positioned relative to the link */
-    overflow: hidden; /* Hide the overflowing pseudo-element */
-    z-index: 1; /* Ensure the link text stays on top */
-    border: 2px solid transparent; /* Initial border with transparent color */
-    border-radius: 30px; /* Optional: Add rounded corners */
-    transition: border-color 0.5s ease; /* Smooth transition for border color */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    transition: border-color 0.5s ease;
     border-color: rgb(85, 31, 0);
     border-width: 2px;
     background-color: #120000;
@@ -55,30 +53,45 @@
     left: 0;
     width: 0;
     height: 100%;
-    background-color: rgb(199, 0, 0); /* Color of the fill */
-    transition: width 0.25s ease; /* Smooth transition for the fill effect */
-    z-index: -1; /* Ensure the fill is behind the text */
+    background-color: rgb(199, 0, 0);
+    transition: width 0.25s ease;
+    z-index: -1;
     border-radius: 30px;
     box-shadow: 0 0 25px red;
 }
 
 .nav-links li a:hover::before {
-    width: 100%; /* Expand the fill to 100% width on hover */
+    width: 100%;
     border-radius: 30px;
 }
 
 .nav-links li a:hover {
-    color: aliceblue; /* Optional: Change text color on hover */
+    color: aliceblue;
+}
+
+.nav-logo {
+    flex: 0; /* Prevent the logo from taking up too much space */
+    margin: 0;
+}
+
+.nav-logo img {
+    max-height: 109px; /* Adjust based on your design */
+    width: auto;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-bottom: 2px;
+    margin-top: -7px;
+    margin-right:65px;
+    margin-left:65px;
+
 }
 
 
-/* Logo Styling */
-.HomeImage {
-    margin-bottom: 2px;
-    max-height: 100%;
-    max-width: 14%;
-    object-fit: contain;
-    cursor: pointer;
+
+
+
+.nav-spacer {
+    flex: 1; /* Takes up remaining space, adjusting the distances */
 }
 
 
@@ -204,8 +217,63 @@
     z-index: -1;
 }
 
+/* Footer */
+.footer {
+    background-color: #361a1a;
+    padding: 20px 0;
+    text-align: center;
+}
 
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px; /* Adjust based on your design */
+    margin: 0 auto;
+}
 
+.college-logo {
+    height: 70px; /* Adjust based on your design */
+    margin-right: 20px; /* Space between logo and social icons */
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-link {
+    display: inline-block;
+}
+
+.social-logo {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-logo:hover {
+    transform: scale(1.1);
+}
+
+.contact-us {
+    text-align: left;
+}
+
+.contact-us p {
+    margin: 0;
+    color: #fff;
+}
+
+.contact-us a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-us a:hover {
+    text-decoration: underline;
+}
 
 
 
