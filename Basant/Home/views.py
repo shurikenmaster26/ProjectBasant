@@ -13,8 +13,8 @@ def about(request):
 
 def events_view(request):
     events = [
-        {'id': 1, 'title': 'Anime Quiz', 'intro': 'Test your anime knowledge!', 'image': 'images/anime_quiz.jpg'},
-        {'id': 2, 'title': 'Cosplay Contest', 'intro': 'Show off your best cosplay!', 'image': 'images/cosplay.jpg'},
+        {'id': 1, 'title': 'Anime Quiz', 'intro': 'Test your anime knowledge!', 'image': 'anime_quiz.jpeg'},
+        {'id': 2, 'title': 'Cosplay Contest', 'intro': 'Show off your best cosplay!', 'image': 'cosplay.jpeg'},
         # Add more events as needed
     ]
     return render(request, 'home/events.html', {'events': events})
@@ -28,7 +28,7 @@ def buy_tickets_view(request, event_id):
     return render(request, 'buy_tickets.html', {'event_id': event_id})
 
 def sliding_auth_view(request):
-    return render(request, 'auth/sliding_auth.html')
+    return render(request, 'home/sliding_auth.html')
 
 def signup_view(request):
     if request.method == 'POST':
