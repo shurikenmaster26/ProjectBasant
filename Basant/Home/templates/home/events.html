@@ -5,22 +5,33 @@
 {% endblock %}
 {% block content %}
 {% load static %}
-<div class="events-container">
-    {% for event in events %}
-    <div class="event-card">
-        <!-- Update the image source to concatenate the static path correctly -->
-        <img src="{% static 'home/images/' %}{{ event.image }}" alt="{{ event.title }}" class="event-image">
-        <div class="event-content">
-            <h3>{{ event.title }}</h3>
-            <p>{{ event.intro }}</p>
-            <div class="event-buttons">
-                <a href="{% url 'event_detail' event.id %}" class="btn details-btn">Details</a>
-                <a href="{% url 'buy_tickets' event.id %}" class="btn tickets-btn">Buy Tickets</a>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        {% for event in events %}
+        <div class="swiper-slide">
+            <div class="event-card">
+                <img src="{% static 'home/images/' %}{{ event.image }}" alt="{{ event.title }}" class="event-image">
+                <div class="event-content">
+                    <h3>{{ event.title }}</h3>
+                    <p>{{ event.intro }}</p>
+                    <div class="event-buttons">
+                        <a href="{% url 'event_detail' event.id %}" class="btn details-btn">Details</a>
+                        <a href="{% url 'buy_tickets' event.id %}" class="btn tickets-btn">Buy Tickets</a>
+                    </div>
+                </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+
+    <!-- Swiper navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Swiper pagination -->
+    <div class="swiper-pagination"></div>
 </div>
+
 {% endblock content %}
 
 

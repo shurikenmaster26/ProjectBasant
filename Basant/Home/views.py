@@ -13,8 +13,23 @@ def about(request):
 
 def events_view(request):
     events = [
-        {'id': 1, 'title': 'Anime Quiz', 'intro': 'Test your anime knowledge!', 'image': 'anime_quiz.jpeg'},
-        {'id': 2, 'title': 'Cosplay Contest', 'intro': 'Show off your best cosplay!', 'image': 'cosplay.jpeg'},
+        
+        
+        {'id': 1, 'title': 'Music/Singing/RapBattle/Band', 'intro': 'Show off your musical genius', 'image': 'music.jpeg'},
+        {'id': 2, 'title': 'Dancing/StreetDance/DanceBattle', 'intro': 'Show off your fluidity', 'image': 'dancing.jpeg'},
+        {'id': 3, 'title': 'Fashion show', 'intro': 'Show off your charisma in style', 'image': 'fashion.jpeg'},
+        {'id': 4, 'title': 'Drama/Theater', 'intro': 'Enchant audiences with your acting    ', 'image': 'drama.jpg'},
+        {'id': 5, 'title': 'Art exhibition', 'intro': 'Bless the canvas with your minds eye ', 'image': 'art.jpeg'},
+        {'id': 6, 'title': 'Cosplay Contest', 'intro': 'Show off your best cosplay!', 'image': 'cosplay.jpeg'},
+        {'id': 7, 'title': 'Hackathon', 'intro': 'Out-code your rivals', 'image': 'hack.jpeg'},
+        {'id': 7, 'title': 'Gym events', 'intro': 'Become the successor to Baki!', 'image': 'gym.jpeg'},
+        {'id': 8, 'title': 'Anime Quiz', 'intro': 'Test your anime knowledge!', 'image': 'anime_quiz.jpeg'},
+        {'id': 9, 'title': 'Robo-War', 'intro': 'Craft machines and engage in the war of steels', 'image': 'robo.jpeg'},
+        {'id': 10, 'title': 'E-sports(BGMI)', 'intro': 'Conquer the battlegrounds', 'image': 'bgmi.png'},
+        {'id': 11, 'title': 'E-sports(Free-fire)', 'intro': 'Spray and pray', 'image': 'ff.jpeg'},
+        {'id': 12, 'title': 'Treasure Hunt', 'intro': 'Find the lost one piece!', 'image': 'treasurehunt.jpeg'},
+        {'id': 13, 'title': 'Prom nite', 'intro': 'Shower a little love', 'image': 'promnite.jpeg'},
+        {'id': 14, 'title': 'Open-mic', 'intro': 'Make audiences laugh!', 'image': 'openmic.jpeg'},
         # Add more events as needed
     ]
     return render(request, 'home/events.html', {'events': events})
@@ -30,6 +45,18 @@ def buy_tickets_view(request, event_id):
 def sliding_auth_view(request):
     return render(request, 'home/sliding_auth.html')
 
+def ourTeam_view(request):
+    events = [
+        
+        
+        {'id': 1, 'title': 'person1', 'intro': 'year 4, branch cs', 'image': 'fashion.jpeg'},
+        {'id': 2, 'title': 'person2', 'intro': 'year 4, branch cs', 'image': 'fashion.jpeg'},
+        {'id': 3, 'title': 'person3', 'intro': 'year 4, branch cs', 'image': 'fashion.jpeg'},
+        {'id': 4, 'title': 'person4', 'intro': 'year 4, branch cs', 'image': 'fashion.jpeg'},
+        # Add more events as needed
+    ]
+    return render(request, 'home/team.html', {'events': events})
+    
 def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

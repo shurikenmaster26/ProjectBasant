@@ -11,21 +11,22 @@
     {% block extra_css %}
     <!-- Additional CSS files for each template will be included here -->
     {% endblock %}
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
     <link rel="icon" type="image/png" href="{% static 'home/images/Blogo.png' %}">
 </head>
     <body>
         <nav class="navbar">
             <ul class="nav-links">
                 <li class="nav-spacer"></li> <!-- Spacer -->
-                <li><a class="active" href="index.html">Events</a></li>
-                <li><a href="pages/about.html">About</a></li> <!-- Added text here -->
+                <li><a class="active" href="{% url 'events' %}">Events</a></li>
+                <li><a href="{% url 'AboutPage' %}">About</a></li> <!-- Added text here -->
                 <a href="{% url 'WebHome' %}" class="nav-logo">
                     <img src="{% static 'home/images/Untitled.png' %}" alt="Example Image" class="HomeImage"/>
                 </a>
                 </li>
-                <li><a href="index.html">Our Team</a></li>
-                <li><a href="pages/register.html">Register</a></li> <!-- Corrected href -->
+                <li><a href="{% url 'ourteam' %}">Our Team</a></li>
+                <li><a href="https://forms.gle/BQXyfzb19Q1jsF5j7">Register</a></li> <!-- Corrected href -->
                 <li class="nav-spacer"></li> <!-- Spacer -->
             </ul>
         </nav>
@@ -63,5 +64,33 @@
     
 
     <script src="{% static 'home/js/home.js' %}"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            slidesPerView: 3,  // Show 3 slides at a time
+            spaceBetween: 30,  // Adjust the space between slides (in pixels)
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,  // Show 2 slides on smaller screens
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,  // Show 3 slides on larger screens
+                    spaceBetween: 30,
+                }
+            }
+        });
+    </script>
+    
+    
 </body>
 </html>
