@@ -12,6 +12,9 @@ body {
     height: 100vh;
     background: linear-gradient(45deg, #FFC3A0, #FFAFBD);
 }
+body{
+    background-color: #1a1a2e;
+}
 
 .container {
     position:absolute;
@@ -230,8 +233,7 @@ body {
     box-shadow: 0 0px 8px rgba(89, 255, 0, 0.5);
     color: greenyellow;
 }
-
-
+/* Main Navbar Styles */
 .navbar {
     position: fixed;
     top: 0;
@@ -243,14 +245,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+    z-index: 3;
+}
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     width: 100%;
-    justify-content: space-between; /* Use space-between to evenly distribute links */
+    justify-content: space-between;
     align-items: center;
     margin: 0;
     padding: 0;
@@ -259,8 +269,8 @@ body {
 
 .nav-links li {
     position: relative;
-    flex: 1; /* Each link takes up equal space */
-    text-align: center; /* Center the text within each list item */
+    flex: 1;
+    text-align: center;
 }
 
 .nav-links li a {
@@ -276,10 +286,10 @@ body {
     border-radius: 30px;
     transition: border-color 0.5s ease;
     border-color: rgb(85, 31, 0);
-    border-width: 2px;
     background-color: #120000;
 }
 
+/* Hover effects for buttons */
 .nav-links li a::before {
     content: '';
     position: absolute;
@@ -301,31 +311,75 @@ body {
 
 .nav-links li a:hover {
     color: aliceblue;
-    font-weight:600;
 }
 
+/* Navbar logo styles */
 .nav-logo {
-    flex: 0; /* Prevent the logo from taking up too much space */
+    flex: 0;
     margin: 0;
 }
 
 .nav-logo img {
-    max-height: 109px; /* Adjust based on your design */
-    width: auto;
+    max-height: 109px;
     object-fit: contain;
     vertical-align: middle;
     margin-bottom: 2px;
     margin-top: -7px;
-    margin-right:65px;
-    margin-left:65px;
-
+    margin-right: 65px;
+    margin-left: 65px;
 }
 
+/* Spacer for links */
 .nav-spacer {
-    flex: 1; /* Takes up remaining space, adjusting the distances */
+    flex: 1;
 }
 
-/* Add more styling here if needed */
+/* Hamburger icon */
+.navbar-toggler {
+    display: none; /* Hidden by default */
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+    /* Navbar adjustments */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 110px;
+        left: 0;
+        border-radius: 0;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    /* Show hamburger icon */
+    .navbar-toggler {
+        display: block;
+    }
+
+    .nav-logo img {
+        max-height: 80px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
 
 
 

@@ -17,18 +17,23 @@
 </head>
     <body>
         <nav class="navbar">
-            <ul class="nav-links">
-                <li class="nav-spacer"></li> <!-- Spacer -->
-                <li><a class="active" href="{% url 'events' %}">Events</a></li>
-                <li><a href="{% url 'AboutPage' %}">About</a></li> <!-- Added text here -->
+            <div class="nav-container">
                 <a href="{% url 'WebHome' %}" class="nav-logo">
                     <img src="{% static 'home/images/Untitled.png' %}" alt="Example Image" class="HomeImage"/>
                 </a>
-                </li>
-                <li><a href="{% url 'ourteam' %}">Our Team</a></li>
-                <li><a href="https://forms.gle/BQXyfzb19Q1jsF5j7">Register</a></li> <!-- Corrected href -->
-                <li class="nav-spacer"></li> <!-- Spacer -->
-            </ul>
+        
+                <!-- Hamburger icon for small screens -->
+                <button class="navbar-toggler" type="button" aria-label="Toggle navigation" onclick="toggleMenu()">
+                    <span class="navbar-toggler-icon">&#9776;</span>
+                </button>
+        
+                <ul class="nav-links">
+                    <li><a class="active" href="{% url 'events' %}">Events</a></li>
+                    <li><a href="{% url 'AboutPage' %}">About</a></li>
+                    <li><a href="{% url 'ourteam' %}">Our Team</a></li>
+                    <li><a href="https://forms.gle/BQXyfzb19Q1jsF5j7">Pay Now</a></li>
+                </ul>
+            </div>
         </nav>
     
         <div class="BG1">
@@ -89,6 +94,11 @@
                 }
             }
         });
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
     </script>
     
     
